@@ -35,7 +35,7 @@ body {
     background-color: white;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: white;
+    background-color: black;
 }
 
 ::-moz-selection {
@@ -54,8 +54,7 @@ body {
 
 .column {
 	position: absolute;
-	height: calc(100vh - 4rem);
-	top: 100vh;
+	height: calc(100% - 10rem);
 	padding: 2rem;
 
 	overflow: auto;
@@ -72,7 +71,7 @@ body {
 }
 
 .content {
-	display: none;
+	/*display: none;*/
 }
 
 .content.main {
@@ -115,14 +114,17 @@ p,
 }
 
 .header,
+span.date {
+	font-size: 3rem;
+}
+
 p.a,
 p.main.title, 
 p.main.date,
-.page-title,
+/*.page-title,*/
 li,
 span.a,
 span.b,
-span.date,
 .b.works-list {
  	font-size: 2rem;
  	line-height: 2.5rem;
@@ -130,7 +132,7 @@ span.date,
 
 p.main,
 span.date {
-	display: none;
+	/*display: none;*/
 }
 
 p.main.title, 
@@ -325,17 +327,72 @@ html {
 	padding: 0;
 	margin: 0;
 
-	overflow: auto;
+	overflow: hidden;
 }
 
 .page {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: calc(100vw - 4.25rem);
-	height: calc(100vh - 7rem);
+	width: calc(100vw - 4rem);
+	height: calc(100vh - 4rem);
 
 	padding: 2rem;
+	margin: 0;
+
+	background-color: white;
+
+	transition-duration: 1s;
+}
+
+.page.wrapper {
+	width: calc(100vw - 0rem);
+	height: calc(100vh - 0rem);
+	padding: 0rem;
+}
+
+.up {
+	top: -100vh;
+}
+
+.down {
+	top: 0vh;
+}
+
+div.page1 {
+	z-index: -1;
+}
+
+div.page2 {
+	z-index: -2;
+}
+
+div.page3 {
+	z-index: -3;
+}
+
+div.page4 {
+	z-index: -4;
+}
+
+div.page5 {
+	z-index: -5;
+}
+
+div.page6 {
+	z-index: -6;
+}
+
+div.page7 {
+	z-index: -7;
+}
+
+div.page8 {
+	z-index: -8;
+}
+
+div.page9 {
+	z-index: -9;
 }
 
 #end {
@@ -343,8 +400,9 @@ html {
 }
 
 .landing.header {
-	font-size: 4rem;
-	line-height: 4rem;
+	font-size: 5rem;
+	line-height: 5.5rem;
+	letter-spacing: -0.1rem;
 }
 
 .landing.header.full-site {
@@ -357,7 +415,7 @@ html {
 .landing.bg-img-wrapper {
 	position: absolute;
 	width: calc(100vw - 8rem);
-	height: calc(100vh - 10rem);
+	height: calc(100vh - 8rem);
 	top: 0;
 	left: 0;
 	margin: 4rem;
@@ -414,7 +472,7 @@ iframe.ty {
 }
 
 .wink.land {
-	width: 3rem;
+	width: 3.5rem;
 }
 
 .wink.end {
@@ -424,47 +482,31 @@ iframe.ty {
 	left: calc(50vw - 12rem);
 }
 
-
-
+a.back,
 a.next {
 	display: block;
-	position: fixed;
+	position: absolute;
 	bottom: 0;
-	right: 0;
-	margin: -1rem 1rem -1rem -1rem;
 	padding: 1rem;
 
 	font-size: 4rem;
 	text-decoration: none;
 
+	user-select: none;
+}
+
+a.next {
+	right: 0;
+	margin: -1rem 1rem -1rem -1rem;
+
 	cursor: e-resize;
 }
 
 a.back {
-	display: block;
-	position: fixed;
-	bottom: 0;
 	left: 0;
-	margin: -1rem -1rem 1rem 1rem;
-	padding: 1rem;
-
-	font-size: 1rem;
-	font-style: italic;
-	text-decoration: none;
+	margin: -1rem -1rem -1rem 1rem;
 
 	cursor: w-resize;
-}
-
-a.restart {
-	display: block;
-	position: absolute;
-	top: 2rem;
-	right: 2rem;
-	margin: 0rem 0rem 0rem 0rem;
-
-	font-size: 1rem;
-	font-style: italic;
-	text-decoration: none;
 }
 
 a.end {
@@ -479,7 +521,8 @@ a.grave {
 	/*margin-left: 2rem;*/
 }
 
-a.next:hover {
+a.next:hover,
+a.back:hover {
 	font-style: normal;
 
     animation: back-n-forth 600ms linear 0s infinite normal;
@@ -491,8 +534,8 @@ a.next:hover {
 
 .landing.cat.text {
 	position: absolute;
-	bottom: 0rem;
-	left: 2rem;
+	width: calc(100% - 4rem);
+	bottom: 4rem;
 }
 
 .landing.cat {
@@ -500,9 +543,17 @@ a.next:hover {
 	line-height: 3rem;
 }
 
+.no-marg-bot.landing.cat.text {
+	bottom: 0rem;
+}
+
 .cat-hovering {
 	background-color: black;
 	color: white;
+}
+
+.align-right {
+	text-align: right;
 }
 
 
